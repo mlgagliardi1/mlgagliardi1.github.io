@@ -1,0 +1,67 @@
+/*      ROOT Declaration        */
+:root {
+    font-size: 10px;
+
+
+    --mainBackgroundColor: gray;
+}
+
+
+
+/*      ELEMENT Declaration        */
+html {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: var(--mainBackgroundColor);
+}
+
+header {
+    height: 10rem;
+    width: 100%;
+    margin: 0;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+
+/*      ID Declaration        */
+#logo {
+    height: 100%;
+    width: 70%;
+    margin: 0;
+    float: left;
+    line-height: 5rem;
+    vertical-align: middle;
+    font-size: 1.8rem;
+}
+
+#nav {
+    height: 100%;
+    width: 20rem;
+    margin: 0;
+    float: right;
+    display: inline-flex;
+    text-align: center;
+    line-height: 10rem;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+#nav1 {
+    width: 20%;
+}
+
+#nav2 {
+    width: 80%;
+}
+
+
+
+/*      CLASS Declaration        */
+.navOption {
+    height: 100%;
+    margin: 0;
+    float: right;
+}
