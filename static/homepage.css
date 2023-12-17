@@ -2,8 +2,16 @@
 :root {
     font-size: 10px;
 
-
     --mainBackgroundColor: gray;
+    --optionBackgroundColor: gray;
+    --optionFontColor: black;
+    --primaryTextColor: white;
+    --chartTitleBackgroundColor: lightgrey;
+    --chartDisplayBackgroundColor: lightgrey;
+    --chartFooterBackgroundColor: lightgrey;
+    --aboutBackgroundColor: gray;
+    --dividerColor: black;
+
 }
 
 
@@ -16,12 +24,24 @@ html {
     background-color: var(--mainBackgroundColor);
 }
 
+body {
+    height: calc(100vh - 1rem);
+    width: calc(100vw - 1rem);
+    display: block;
+}
+
 header {
     height: 10rem;
     width: 100%;
     margin: 0;
+    overflow: hidden;
     display: inline-flex;
     justify-content: space-between;
+}
+
+a, a:visited {
+    color: var(--primaryTextColor);
+    text-decoration: none;
 }
 
 
@@ -57,6 +77,124 @@ header {
     width: 80%;
 }
 
+#content {
+    height: 80%;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    background-color: transparent;
+}
+
+#options {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    font-size: 1.6rem;
+    float: left;
+    color: var(--optionFontColor);
+    background-color: var(--optionBackgroundColor);
+}
+
+#displayStack {
+    height: 100%;
+    width: 60%;
+    margin: 0;
+    display: inline-block;
+    background-color: transparent;
+}
+
+#chartAbout {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    float: right;
+    background-color: var(--aboutBackgroundColor);
+}
+
+#chartTitle {
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    background-color: var(--chartTitleBackgroundColor);
+}
+
+#chartDisplay {
+    height: 70%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--chartDisplayBackgroundColor);
+}
+
+#chartFooter {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    background-color: var(--chartFooterBackgroundColor);
+}
+
+#datasetForm {
+    width: 70%;
+    margin: 1rem 1rem 0 1rem;
+    justify-content: center;
+    border: none;
+    align-items: center;
+}
+
+#sortForm {
+    width: 70%;
+    margin: 1rem 1rem 0 1rem;
+    justify-content: center;
+    border: none;
+    align-items: right;
+    text-align: left;
+}
+
+#dynamicOptions {
+    width: 100%;
+    height: 50%;
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+}
+
+#optHead {
+    margin: 1rem 0 1rem 0;
+}
+
+#Xlabel {
+    height: 2rem;
+    width: 40%;
+    margin: 1rem 0.6rem 0 1rem;
+}
+
+#Xselect {
+    height: 2rem;
+    width: 50%;
+    margin: 1rem 10% 1rem 0;
+}
+
+#Ylabel {
+    height: 2rem;
+    width: 40%;
+    max-width: 2rem;
+    margin: 0 auto;
+    margin: 0 0.6rem 0 1rem;
+}
+
+#Yselect {
+    height: 2rem;
+    width: 50%;
+    margin: 0 10% 0 0;
+}
+
+#submit {
+    height: 3rem;
+    width: 70%;
+    max-width: 10rem;
+    margin: 1rem auto 0 auto;
+    padding: 0;
+}
 
 
 /*      CLASS Declaration        */
@@ -65,3 +203,11 @@ header {
     margin: 0;
     float: right;
 }
+
+.divider {
+    height: 0.2rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--dividerColor);
+}
+

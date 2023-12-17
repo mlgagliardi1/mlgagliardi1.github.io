@@ -4,29 +4,48 @@
 
 <html lang="en">
     <head>
-        <title></title>
+        <title>Visualizing Census Data</title>
         <meta name="author" content="Michael Gagliardi">
         <meta name="keywords" content="Michael Gagliardi, N328, Visualization, Visualizing New Media, US Census Data">
         <meta charset="UTF-8">
+        <script src="http://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script type="text/javascript" src="./d3.js"></script>
+        <script type="text/javascript" src="./static/homepage.js"></script>
         <link rel="stylesheet" type="text/css" href="./static/homepage.css">
-        <script type="module" rel="text/javascript" src="./static/homepage.js"></script>
     </head>
 
     <body>
         <!--        Header          -->
         <header>
             <div id="logo">
-                <h1>N328 Final Project - Michael Gagliardi</h1>
+                <h1>US Education Data 2020-2021</h1>
             </div>
             <div id="nav">
-                <p id="nav1" class="navOption">About</p>
-                <p id="nav2" class="navOption">Youtube Video</p>
+                <p id="nav1" class="navOption"><a href="./static/about.pdf" target="_blank">About</a></p>
+                <p id="nav2" class="navOption"><a href="https://www.youtube.com" target="_blank">Youtube Video</a></p>
             </div>
         </header>
 
         <!--        Main Content        -->
-        <div id="container">
+        <div id="content">
+            <div id="options">
+                <h3><center>Choose Your Datset</center></h3>
+                <div class="divider"></div>
+                <form id="datasetForm">
+                    <input type="radio" id="2020" name="dataset" value="2020" onchange="datasetSelection('2020')">
+                        <label for="2020">2020</label><br>
+                    <input type="radio" id="2021" name="dataset" value="2021" onchange="datasetSelection('2021')">
+                        <label for="2021">2021</label><br>
+                </form>
+                <div id="dynamicOptions"></div>
+            </div>
+            <div id="displayStack">
+                <div id="chartTitle"></div>
+                <div id="chartDisplay"></div>
+                <div id="chartFooter"></div>
+            </div>
+            <div id="chartAbout"></div>
         </div>
-
     </body>
 </html>
