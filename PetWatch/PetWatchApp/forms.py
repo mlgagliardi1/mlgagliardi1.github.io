@@ -20,4 +20,5 @@ class LocationForm(forms.ModelForm):
     class Meta:
         model = LOCATION
         fields = '__all__'
+
     

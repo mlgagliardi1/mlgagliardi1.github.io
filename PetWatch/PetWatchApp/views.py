@@ -7,6 +7,7 @@ from django.views.generic import TemplateView, FormView
 from django.contrib.auth import authenticate, login
 from .forms import ContactForm, ReviewForm, LocationForm
 
+
 # Create your views here.
 # Login Page
 def login(request):
