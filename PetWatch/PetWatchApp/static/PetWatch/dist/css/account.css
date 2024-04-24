@@ -1,0 +1,9 @@
+.account{
+    width: 1130px;
+    max-width: 85%;
+    margin: 75px auto 0 auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }

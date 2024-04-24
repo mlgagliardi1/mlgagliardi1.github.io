@@ -1,0 +1,38 @@
+
+<!--        Homepage Extends the Base Template        -->
+{% extends "PetWatch\index.html" %}
+
+<!--        Load Static Files       -->
+{% load static %}
+
+<!--        Fill in the available blocks        -->
+<!-- tabTitle -->
+{% block tabTitle %}
+{% if user.is_authenticated %}{{user.username}}'s Account
+{% else %}My Account
+{% endif %}
+{% endblock %}
+
+<!-- tabTitle -->
+{% block styleSheet %}../../static/PetWatch/dist/css/account.css{% endblock %}
+
+<!-- tabTitle -->
+{% block scriptFile %}../../assets/js/ie10-viewport-bug-workaround.js{% endblock %}
+
+<!-- content -->
+{% block content %}
+  <div class="account">
+    {% if user.is_authenticated %}
+      <p>Hi {{ user.username }}!</p>
+      <p><a href="{% url 'password_change' %}">Password Change</a></p>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+      </form>
+    {% else %}
+      <p>You are not logged in</p>
+      <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+      <p><a href="{% url 'login' %}">Log In</a></p>
+    {% endif %}
+  </div>
+{% endblock %}

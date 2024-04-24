@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Login to PetWatch</title>
+    <link href="../../static/PetWatch/dist/css/login1.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="loginForm">
+      <h1 class="loginHeader">Log In to PetWatch</h1>
+      <div class="formcontainer">
+        <form method="post">
+          {% csrf_token %}
+          {{ form }}
+          <div class="center">
+            <button type="submit">Log In</button>
+          </div>
+          <p><a href="{% url 'password_change' %}">Password Change</a></p>
+        </form>
+      </div>
+  </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../static/PetWatch/dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% block scriptFile %}../../assets/js/ie10-viewport-bug-workaround.js{% endblock %}"></script>
+  </body>
+</html>

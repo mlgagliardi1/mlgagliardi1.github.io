@@ -1,0 +1,32 @@
+
+<!--        Homepage Extends the Base Template        -->
+{% extends "PetWatch\index.html" %}
+
+<!--        Load Static Files       -->
+{% load static %}
+
+<!--        Fill in the available blocks        -->
+<!-- tabTitle -->
+{% block tabTitle %}
+    Contact PetWatch
+{% endblock %}
+
+<!-- tabTitle -->
+{% block styleSheet %}../../static/PetWatch/dist/css/contact.css{% endblock %}
+
+<!-- tabTitle -->
+{% block scriptFile %}../../assets/js/ie10-viewport-bug-workaround.js{% endblock %}
+
+<!-- content -->
+{% block content %}
+<h1 class="contactHeader">At PetWatch, we love to hear your feedback!</h1>
+<div class="formcontainer">
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <div class="center">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
