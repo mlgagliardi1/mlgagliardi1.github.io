@@ -40,6 +40,9 @@ class USER (models.Model):
     USER_BIO = models.CharField(max_length=250)
     USER_BIRTHDATE = models.DateField()
     USER_AGE = models.IntegerField()
+    
+    def __str__(self):
+        return '%s %s' % (self.USER_FIRST_NAME, self.USER_LAST_NAME)
 
 # PET Table
 class PET (models.Model):
@@ -49,6 +52,9 @@ class PET (models.Model):
     PET_BREED = models.CharField(max_length=50)
     PET_WEIGHT = models.DecimalField(max_digits=4, decimal_places=1)
     PET_VACCINATION_STATUS = models.BooleanField()
+
+    def __str__(self):
+        return '%s %s' % (self.PET_OWNER_USER_ID, self.PET_TYPE)
 
 # LOCATION Table
 class LOCATION (models.Model):
@@ -61,6 +67,10 @@ class LOCATION (models.Model):
     LOCATION_HAS_FENCE = models.BooleanField()
     LOCATION_HAS_PETS = models.BooleanField()
 
+    def __str__(self):
+        return '%s %s' % (self.LOCATION_OWNER_USER_ID, self.LOCATION_TYPE)
+    
+
 # EMPLOYEE Table
 class EMPLOYEE (models.Model):
     EMPLOYEE_ID = models.AutoField(primary_key=True)
@@ -71,10 +81,16 @@ class EMPLOYEE (models.Model):
     EMPLOYEE_PAY_RATE = models.DecimalField(max_digits=5, decimal_places=2)
     EMPLOYEE_HIRE_DATE = models.DateField()
 
+    def __str__(self):
+        return '%s %s' % (self.EMPLOYEE_USER_ID, self.EMPLOYEE_TITLE)
+
 # REVIEW Table
 class REVIEW (models.Model):
     REVIEWING_USER_ID = models.ForeignKey("USER", on_delete=models.CASCADE)
     REVIEWED_LOCATION = models.ForeignKey("LOCATION", on_delete=models.CASCADE)
     REVIEW_TEXT = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return '%s %s' % (self.REVIEWING_USER_ID, self.REVIEWED_LOCATION)   
     
 

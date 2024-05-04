@@ -5,7 +5,9 @@ from django.core.mail import send_mail
 from django.shortcuts import reverse
 from django.views.generic import TemplateView, FormView
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from .forms import ContactForm, ReviewForm, LocationForm
+from .models import LOCATION
 
 
 # Create your views here.
@@ -20,7 +22,7 @@ def login(request):
         return render(request, "PetWatch/index.html")
     else:
         #Return an invalid login error message
-        return render(request, "PetWatch/homepage.html")
+        return render(request, "PetWatch/login.html")
 
 # Homepage
 def index(request):
@@ -36,7 +38,8 @@ def contact(request):
 
 # Watch
 def watch(request):
-    return render(request, "PetWatch/watch.html")
+    locations = LOCATION.objects.all()
+    return render(request, "PetWatch/watch.html", {'locations': locations})
 
 # Locations
 def locations(request):
